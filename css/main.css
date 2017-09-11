@@ -11,8 +11,6 @@
 	color: #432920; 
 }
 
-
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -21,44 +19,32 @@
 	1.2 - Body Copy
 	1.3 - Buttons
 	1.4 - Forms
-	1.5 - Lists
-	1.6 - Tables
+	1.5 - Tables
 2.0 - Navigation Menus
 	2.1 - Main
-	2.2 - Sub
-	2.3 - Footer
 3.0 - Content
 	3.1 - Site Structure
-	3.2	- Site Header
-	3.3	- Site Footer
+	3.2	- Site Footer
 4.0 - Media
 5.0 - Utility
-	5.1 - Text Sizes
-	5.2 - Colors
-	5.3 - Alignments
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 1.0 - Typography
 -------------------------------------------------------------- */
-h2, h3, h4, h5, a, th, td:first-child, header p, #about > p {
+h2, h3, h4, h5, a, th, td:first-child, header p, #about > p, #left-inputs label, legend {
 	font-family: Playfair Display;
 }
 
-h2, h3, a, th:first-child, header p, #about > p {
+h2, h3, a, th:first-child, header p, #about > p, #right-inputs label {
 	text-transform: uppercase;
 }
 
-h5, footer p, #about a, #products a, #contact-us a {
+h5, footer p, #about a[href="#contact-us"], #products a, #contact-us a {
 	color: #fff;
 }
 
-#about a, #products a, #contact-us a {
-	background-color: #E4546F;
-	padding: 10px 20px;
-}
-
-h2, nav a:hover, footer a:hover {
+h2, nav a:hover, footer a:hover, header p a:hover, a[href="tel:15555555555"] {
 	color: #E4546F;
 }
 
@@ -73,7 +59,7 @@ header p, #about > p {
 	line-height: 40px;
 }
 
-#about h2 {
+#about h2, th:first-child {
 	text-align: left;
 }
 
@@ -81,19 +67,44 @@ nav, #about > p, h2, #products, #contact-us div > p {
 	text-align: center;
 }
 
+#contact-us div > p, #products div > p {
+	font-size: 19px;
+	padding: 0 280px 95px 280px;
+}
+
+#contact-us div > p, #products div > p, nav {
+	font-weight: 700;
+}
+
+th, td, #left-inputs label, legend, nav, p {
+	font-size: 14px;
+}
+
+td:first-child, #left-inputs label, legend {
+	font-weight: 600;
+}
+
+tbody tr:nth-child(odd), nav {
+	background-color: #fff;
+}
+
+caption, span {
+	display: none;
+}
+
+#about a[href="#contact-us"]:hover, #products a:hover, #contact-us a:hover {
+	background-color: #9E1E40;
+}
+
 header p {
 	background-color: rgba(255, 255, 255, 0.5);
 	padding: 30px 80px 30px 20px;
 }
 
-#contact-us div > p, #products div > p {
-	font-weight: 700;
-	font-size: 19px;
-}
-
 #about > p {
 	margin-top: 0;
 	margin-bottom: 100px;
+	padding: 0 40px;
 }
 
 /*1.1 - Headings*/
@@ -104,7 +115,6 @@ h1, h2, h3, h4 {
 
 /*1.2 - Body Copy*/
 p {
-	font-size: 14px;
 	line-height: 25px;
 }
 
@@ -113,17 +123,84 @@ a {
 	text-decoration: none;
 }
 
+#about a[href="#contact-us"], #products a, #contact-us a {
+	background-color: #E4546F;
+	padding: 10px 20px;
+}
+
+a[href="tel:15555555555"] {
+	text-transform: lowercase;
+	font-family: Open Sans;
+}
+
+a[href="tel:15555555555"]:hover{
+	color: #9E1E40;
+}
+
 /*1.4 - Forms*/
 form {
+	width: 970px;
+}
+
+fieldset {
+	border: 0;
+}
+
+#left-inputs input, select {
+	height: 49px;
+}
+
+#left-inputs input, textarea, select {
+	width: 470px;
+}
+
+textarea {
+	height: 183px;
+}
+
+label {
+	display: block;
+}
+
+#left-inputs label {
+	margin: 60px 0 10px;
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -o-box-sizing: none;
+   -ms-box-sizing: none;
+   appearance: none;
+}
+
+#right-inputs label {
+	font-size: 10px;
+	padding: 9px 45px 9px 0;
+}
+
+#right-inputs input {
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+legend {
+	padding-top: 60px;
+}
+
+/*1.5 - Tables*/
+table {
+	border-collapse: collapse;
 	width: 770px;
 }
 
-caption {
-	display: none;
+th, td {
+	padding: 10px 63px;
 }
 
-/*1.5 - Lists*/
-
+th:first-child, td:first-child {
+	padding-left: 40px;
+}
 
 /*--------------------------------------------------------------
 2.0 - Navigation Menus
@@ -133,10 +210,7 @@ nav {
 	position: fixed;
 	top: 0; 
 	left: 0;
-	background-color: #fff;
 	width: 100%;
-	font-size: 14px;
-	font-weight: 700;
 }
 
 nav li {
@@ -148,19 +222,25 @@ nav li:first-child, nav li:last-child {
 	padding: 0 50px;
 }
 
-
-
-
-/*2.3 - Footer*/
-
-
 /*--------------------------------------------------------------
 3.0 - Content
 -------------------------------------------------------------- */
 /*3.1 - Site Structure*/
+.wrapper, table, form {
+	margin: 0 auto;
+}
+	
+#circle {
+	width: 180px;
+	height: 180px;
+	background: #fff;
+	-moz-border-radius: 180px;
+	-webkit-border-radius: 180px;
+	border-radius: 180px;
+}
+
 .wrapper {
 	width: 1170px;
-	margin: 0 auto;
 	padding: 20px 0;
 }
 
@@ -182,11 +262,13 @@ nav li:first-child, nav li:last-child {
 
 #about section.f-left {
 	width: 570px;
+}
+
+#about section.f-left, #daily-flavors section {
 	margin-left: 30px;
 }
 
 #products section {
-	width: 270px;
 	margin-left: 180px;
 }
 
@@ -202,26 +284,100 @@ nav li:first-child, nav li:last-child {
 	margin-top: 40px;
 }
 
-#daily-flavors section {
+#daily-flavors section, #products section {
 	width: 270px;
-	margin-left: 30px;
 }
 
 #daily-flavors section:first-child, #daily-flavors h2 {
 	margin-bottom: 60px;
 }
 
+#about section.f-right, footer section:last-child {
+	padding-right: 100px;
+}
+
+footer section:nth-child(2) {
+	padding-left: 100px;
+}
+
+h5 {
+	margin-bottom: 0;
+}
+
+table {
+	margin-bottom: 85px;
+}
+
+#about ul p {
+	margin-top: 5px;
+}
+
+#about ul {
+	padding-left: 20px;
+}
+
+p.smooth-scroll {
+	padding-top: 30px;
+} 
+
+/*3.2	- Site Footer*/
+footer ul {
+	padding-left: 0;
+}
+
 /*--------------------------------------------------------------
 4.0 - Media
 -------------------------------------------------------------- */
 #bg-image {
-	background-image: url(../img/bg-cupcake-image.jpg);
+	background: url(../img/bg-cupcake-image.jpg) center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+	padding-top: 200px;
 }
+
+#about ul {
+	list-style-image: url(../img/cherry.jpg);
+}
+
+footer li:first-child a {
+	background: url(../img/icon-facebook.png) no-repeat 0 0;
+}
+
+footer li:nth-child(2) a {
+	background: url(../img/icon-tumblr.png) no-repeat 0 0;
+}
+
+footer li:nth-child(3) a {
+	background: url(../img/icon-pinterest.png) no-repeat 0 0;
+}
+
+footer li:nth-child(4) a {
+	background: url(../img/icon-linked-in.png) no-repeat 0 0;
+}
+
+footer li:last-child a {
+	background: url(../img/icon-google.png) no-repeat 0 0;
+}
+
+footer a {
+	width: 25px;
+	height: 25px;
+	margin-right: 20px;
+	display: inline-block;
+}
+
+footer li a:hover {
+	background-position: 0 -25px;
+}
+
 /*--------------------------------------------------------------
 5.0 - Utility
 -------------------------------------------------------------- */
 #bg-pink {
 	background-color: #F4C9CB;
+	padding: 115px 0 50px;
 }
 
 #products, #contact-us {
